@@ -17,30 +17,30 @@ const UserSchema = new Schema({
             validator: isEmail, 
             message: '{VALUE} is not a valid email'
         }
-    }})
-//     thoughts: [
-//         {
-//             type: Schema.Types.ObjectId,
-//             ref: 'Thought'
-//         }
-//     ],
-//     friends: [
-//         {
-//             type: Schema.Types.ObjectId,
-//             ref: 'User'
-//         }
-//     ],
-// },
-// {
-//     toJSON: {
-//         virtuals: true
-//     }
-// })
+    },
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
+    ],
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
+},
+{
+    toJSON: {
+        virtuals: true
+    }
+})
 
-// //get total count of friends on retrieval
-// UserSchema.virtual('friendCount').get(function() {
-//     return this.friends.length
-// })
+//get total count of friends on retrieval
+UserSchema.virtual('friendCount').get(function() {
+    return this.friends.length
+})
 
 //create the User model using the UserSchema
 const User = model('User', UserSchema)

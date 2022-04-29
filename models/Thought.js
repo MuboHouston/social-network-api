@@ -1,6 +1,33 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat')
 
+//creating reactions as a subdocument schema for thoughts
+const ReactionSchema = new Schema({
+    reactionId: {
+        type: Schema.Types.ObjectId,
+        default: () => new TypeError.ObjectId()
+    },
+    reactionBody: {
+        type: String,
+        required: true,
+        maxlength: [280, 'Maximum of 180 characters']
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        get: (createdAtVal => dateFormat(createdAtVal))
+    }
+},
+{
+    toJSON: {
+        getter: true
+    }
+})
+
 const ThoughtSchema = new Schema({
     thoughtText: {
         type: String,
@@ -13,7 +40,7 @@ const ThoughtSchema = new Schema({
         default: Date.now,
         get: (createdAtVal => dateFormat(createdAtVal))
     },
-    reactions: [reactionSchema] 
+    reactions: [ReactionSchema] 
 },
     {
         toJSON: {
