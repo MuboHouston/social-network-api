@@ -40,11 +40,14 @@ This application has the following features:
 
 ## Walkthrough Video
 ### User Routes
-![User-routes](assets/img/user_route-video.gif/ GIF)
+![User-routes](assets/img/user_route-video.gif)
+\
 link: https://drive.google.com/file/d/14_wySUYpjFLeBKlFNs53fBXmp6g_xTS3/view
 
+
 ### Remaining Routes
-![Remaining-routes](assets/img/remaining_roures_video.gif/ GIF)
+![Remaining-routes](assets/img/remaining_roures_video.gif)
+\
 link: https://drive.google.com/file/d/1t5_nk7ljrlFKs22tSrrcX0hudowp1Ngm/view
 
 ## Installation
