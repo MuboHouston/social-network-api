@@ -1,11 +1,11 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat')
 
 //creating reactions as a subdocument schema for thoughts
 const ReactionSchema = new Schema({
     reactionId: {
         type: Schema.Types.ObjectId,
-        default: () => new TypeError.ObjectId()
+        default: () => new Types.ObjectId()
     },
     reactionBody: {
         type: String,

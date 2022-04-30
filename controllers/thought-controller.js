@@ -86,6 +86,21 @@ const thoughtController = {
             message: 'delete successful',
             data: err
         }))
+    },
+
+    addReaction({ params, body }, res) {
+        Thought.findOneAndUpdate(
+            {_id: params.thoughtId},
+            {$push: {reactions: body}},
+            {new: true, runValidators: true}
+        )
+        .then(dbReactionData => {
+            console.log(dbReactionData)
+            res.json(dbReactionData)
+        })
+        .catch(err => {
+            res.status(400).json(err)
+        })
     }
 }
 
