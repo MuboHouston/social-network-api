@@ -11,13 +11,11 @@ SO THAT my website can handle large amounts of unstructured data
 ```
 
 ## Table of Contents
-* [Walkthrough-Video](#walkthrough-video)
 * [Features](#features)
+* [Walkthrough-Video](#walkthrough-video)
 * [Installation](#installation)
 * [Contributing](#contributing)
 * [Questions](#questions)
-
-## Walkthrough Video
 
 ## Features
 This application has the following features:
@@ -39,6 +37,15 @@ This application has the following features:
 4. API routes for Reactions
 - CREATE a reaction stored in a single thought's reaction array field
 - DELETE and pull a reaction by the reactions's reactionId value
+
+## Walkthrough Video
+### User Routes
+![User-routes](assets/img/user_route-video.gif/ GIF)
+link: https://drive.google.com/file/d/14_wySUYpjFLeBKlFNs53fBXmp6g_xTS3/view
+
+### Remaining Routes
+![Remaining-routes](assets/img/remaining_roures_video.gif/ GIF)
+link: https://drive.google.com/file/d/1t5_nk7ljrlFKs22tSrrcX0hudowp1Ngm/view
 
 ## Installation
 ```bash
