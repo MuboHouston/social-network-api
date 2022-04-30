@@ -95,7 +95,10 @@ const userController = {
                 message: 'deleted',
                 data: dbUserData})
         })
-        .catch(err => res.status(400).json(err))
+        .catch(err => res.status(400).json({
+            message: 'delete successful',
+            data: err
+        }))
     },
 
     addFriend({ params }, res) {    
