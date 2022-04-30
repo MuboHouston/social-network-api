@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const { isEmail } = require('validator')
 
 const UserSchema = new Schema({
@@ -20,20 +20,20 @@ const UserSchema = new Schema({
     },
     thoughts: [
         {
-            type: Schema.Types.ObjectId,
+            type: Types.ObjectId,
             ref: 'Thought'
         }
     ],
     friends: [
         {
-            type: Schema.Types.ObjectId,
+            type: Types.ObjectId,
             ref: 'User'
         }
     ],
 },
 {
     toJSON: {
-        virtuals: true
+        virtuals: true,
     }, 
     id: false
 })
@@ -45,5 +45,10 @@ UserSchema.virtual('friendCount').get(function() {
 
 //create the User model using the UserSchema
 const User = model('User', UserSchema)
+
+UserSchema.post('remove', function(doc) {
+    console.log(doc)
+    User.remove({ user: doc._id }).exec
+})
 
 module.exports = User;
